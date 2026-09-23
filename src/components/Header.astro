@@ -7,6 +7,7 @@ const links = [
   { href: "#productos", label: "Productos" },
   { href: "#nosotros", label: "Nosotros" },
   { href: "#faq", label: "Preguntas frecuentes" },
+  { href: "#contacto", label: "Contacto" }, // aparece en mobile
 ];
 ---
 
@@ -17,22 +18,27 @@ const links = [
       {business.BUSINESS_NAME}
     </a>
 
+    <!-- Links solo desktop -->
     <ul class="hidden items-center gap-8 md:flex">
       {
-        links.map((link) => (
-          <li>
-            <a href={link.href} class="text-sm font-medium text-brand-50 hover:text-white">
-              {link.label}
-            </a>
-          </li>
-        ))
+        links
+          .filter((link) => link.href !== "#contacto") // ocultar contacto en desktop
+          .map((link) => (
+            <li>
+              <a href={link.href} class="text-sm font-medium text-brand-50 hover:text-white">
+                {link.label}
+              </a>
+            </li>
+          ))
       }
     </ul>
 
+    <!-- Botón Contacto solo desktop -->
     <a href="#contacto" class="hidden btn-secondary md:inline-flex">
       Contacto
     </a>
 
+    <!-- Botón hamburguesa -->
     <button
       id="menu-toggle"
       type="button"
@@ -46,6 +52,7 @@ const links = [
     </button>
   </nav>
 
+  <!-- Menú mobile -->
   <div id="mobile-menu" class="hidden border-t border-neutral-100 md:hidden">
     <ul class="space-y-1 px-4 py-3">
       {
