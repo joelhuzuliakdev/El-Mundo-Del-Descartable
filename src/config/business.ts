@@ -37,7 +37,7 @@ export const business = {
   // Horarios — TODO: confirmar horarios reales de atención
   OPENING_HOURS_DISPLAY: [
     { days: "Lunes a Viernes", hours: "8:30 – 12:30 y 16:30 – 20:30" },
-    { days: "Sábados", hours: "9:00 – 13:00 - y 16:30 – 20:30" },
+    { days: "Sábados", hours: "9:00 – 13:00 y 16:30 – 20:30" },
   ],
   // Formato para Schema.org (día en inglés abreviado + rango 24hs)
   OPENING_HOURS_SCHEMA: [

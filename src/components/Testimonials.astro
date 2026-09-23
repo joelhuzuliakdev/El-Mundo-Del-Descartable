@@ -1,5 +1,5 @@
 ---
-import { IconStar } from "@tabler/icons-astro";
+import { IconStar, IconQuote } from "@tabler/icons-astro";
 
 const testimonials = [
     { text: "Excelente atención y muy buen surtido de productos.", author: "Cliente de Río Segundo" },
@@ -19,9 +19,14 @@ const testimonials = [
     <div class="mt-8 grid gap-6 sm:grid-cols-2">
         {
         testimonials.map((t) => (
-            <blockquote class="card">
-            <p class="text-neutral-700">"{t.text}"</p>
-            <footer class="mt-3 text-sm font-medium text-neutral-500">— {t.author}</footer>
+            <blockquote class="card relative overflow-hidden">
+                <IconQuote
+                    size={64}
+                    class="absolute -right-2 -top-2 text-brand-50"
+                    style="z-index: 0;"
+                />
+                <p class="relative z-10 text-neutral-700">"{t.text}"</p>
+                <footer class="relative z-10 mt-3 text-sm font-medium text-neutral-500">— {t.author}</footer>
             </blockquote>
         ))
         }

@@ -1,5 +1,5 @@
 ---
-import { IconShoppingBag } from "@tabler/icons-astro";
+import { IconShoppingBag, IconStar } from "@tabler/icons-astro";
 import WhatsAppButton from "./WhatsAppButton.astro";
 import { business } from "../config/business";
 ---
@@ -7,6 +7,10 @@ import { business } from "../config/business";
 <section id="inicio" class="border-b border-neutral-100 bg-brand-50/40">
   <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
     <div>
+      <div class="mb-4 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-brand-700 shadow-soft">
+        <IconStar size={16} class="fill-brand-700 text-brand-700" />
+        4.9 en Google · 9 reseñas
+      </div>
       <h1 class="text-3xl font-extrabold leading-tight text-neutral-900 sm:text-4xl lg:text-5xl">
         Productos descartables en {business.CITY}, {business.PROVINCE}
       </h1>
