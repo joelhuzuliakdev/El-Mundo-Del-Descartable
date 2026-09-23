@@ -1,0 +1,49 @@
+---
+import { IconBrandWhatsapp, IconPhone, IconMapPin, IconBrandInstagram } from "@tabler/icons-astro";
+import WhatsAppButton from "./WhatsAppButton.astro";
+import { business } from "../config/business";
+---
+
+<section id="contacto" class="section bg-brand-50/50">
+  <div class="mx-auto max-w-2xl text-center">
+    <h2 class="section-title">¿Necesitás productos descartables?</h2>
+    <p class="section-subtitle mx-auto">Consultanos por WhatsApp y te respondemos a la brevedad.</p>
+
+    <div class="mt-6 flex justify-center">
+      <WhatsAppButton variant="inline" label="Consultanos por WhatsApp" />
+    </div>
+
+    <ul class="mt-10 grid gap-4 text-left sm:grid-cols-2">
+      <li class="flex items-center gap-3 rounded-lg bg-white p-4 shadow-soft">
+        <IconBrandWhatsapp class="text-brand-700" size={22} />
+        <a href={`tel:+54${business.PHONE}`} data-ga-event="click_phone" class="text-sm text-neutral-700">
+          {business.PHONE_DISPLAY}
+        </a>
+      </li>
+      <li class="flex items-center gap-3 rounded-lg bg-white p-4 shadow-soft">
+        <IconMapPin class="text-brand-700" size={22} />
+        <span class="text-sm text-neutral-700">{business.ADDRESS}, {business.CITY}</span>
+      </li>
+      {
+        business.INSTAGRAM_URL && (
+          <li class="flex items-center gap-3 rounded-lg bg-white p-4 shadow-soft">
+            <IconBrandInstagram class="text-brand-700" size={22} />
+            <a href={business.INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" class="text-sm text-neutral-700">
+              Instagram
+            </a>
+          </li>
+        )
+      }
+      {
+        business.EMAIL && (
+          <li class="flex items-center gap-3 rounded-lg bg-white p-4 shadow-soft">
+            <IconPhone class="text-brand-700" size={22} />
+            <a href={`mailto:${business.EMAIL}`} class="text-sm text-neutral-700">
+              {business.EMAIL}
+            </a>
+          </li>
+        )
+      }
+    </ul>
+  </div>
+</section>

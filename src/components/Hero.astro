@@ -1,0 +1,40 @@
+---
+import { IconShoppingBag } from "@tabler/icons-astro";
+import WhatsAppButton from "./WhatsAppButton.astro";
+import { business } from "../config/business";
+---
+
+<section id="inicio" class="border-b border-neutral-100 bg-brand-50/40">
+  <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8">
+    <div>
+      <h1 class="text-3xl font-extrabold leading-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+        Productos descartables en {business.CITY}, {business.PROVINCE}
+      </h1>
+      <p class="mt-5 max-w-xl text-lg text-neutral-600">
+        Encontrá vasos, platos, bandejas, bolsas, envases y todo lo que necesitás para tu negocio,
+        evento o {"tu casa en "}{business.BUSINESS_NAME}.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#productos" class="btn-primary">
+          <IconShoppingBag size={20} stroke={2} />
+          Ver productos
+        </a>
+        <WhatsAppButton variant="inline" label="Consultar por WhatsApp" />
+      </div>
+    </div>
+
+    <div class="relative">
+      <img
+        src="/images/hero-descartables.webp"
+        alt={`Variedad de productos descartables disponibles en ${business.BUSINESS_NAME}`}
+        width="640"
+        height="480"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        class="w-full rounded-2xl object-cover shadow-card"
+      />
+    </div>
+  </div>
+</section>

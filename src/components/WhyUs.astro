@@ -1,0 +1,38 @@
+---
+import {
+  IconCategory,
+  IconUsers,
+  IconBuildingStore,
+  IconBrandWhatsapp,
+  IconHeartHandshake,
+  IconConfetti,
+} from "@tabler/icons-astro";
+
+const items = [
+  { icon: IconCategory, title: "Gran variedad", text: "Amplia gama de productos descartables en un solo lugar." },
+  { icon: IconUsers, title: "Atención personalizada", text: "Te asesoramos según lo que necesites vos o tu negocio." },
+  { icon: IconBuildingStore, title: "Comercios y particulares", text: "Trabajamos tanto con negocios como con clientes finales." },
+  { icon: IconBrandWhatsapp, title: "Consultas rápidas", text: "Respondemos tus consultas por WhatsApp de forma ágil." },
+  { icon: IconHeartHandshake, title: "Atención cercana", text: "Trato directo y cercano en cada consulta." },
+  { icon: IconConfetti, title: "Eventos y gastronomía", text: "Soluciones pensadas para fiestas, locales y comercios." },
+];
+---
+
+<section class="section">
+  <h2 class="section-title">¿Por qué elegirnos?</h2>
+  <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      items.map((item) => (
+        <div class="flex gap-4">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+            <item.icon size={22} stroke={1.8} />
+          </div>
+          <div>
+            <h3 class="font-semibold text-neutral-900">{item.title}</h3>
+            <p class="mt-1 text-sm text-neutral-600">{item.text}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

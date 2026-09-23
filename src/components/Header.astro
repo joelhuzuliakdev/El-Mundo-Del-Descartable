@@ -1,0 +1,89 @@
+---
+import { IconMenu2, IconX } from "@tabler/icons-astro";
+import { business } from "../config/business";
+
+const links = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#productos", label: "Productos" },
+  { href: "#nosotros", label: "Nosotros" },
+  { href: "#faq", label: "Preguntas frecuentes" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<header class="sticky top-0 z-30 border-b border-brand-800 bg-brand-700 backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Principal">
+    <a href="#inicio" class="text-lg font-bold text-white">
+      {business.BUSINESS_NAME}
+    </a>
+
+    <ul class="hidden items-center gap-8 md:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="text-sm font-medium text-brand-50 hover:text-white">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a href="#contacto" class="hidden btn-secondary md:inline-flex">
+      Contacto
+    </a>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="inline-flex items-center justify-center rounded-md p-2 text-white md:hidden"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+    >
+      <IconMenu2 id="icon-open" size={26} />
+      <IconX id="icon-close" size={26} class="hidden" />
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="hidden border-t border-neutral-100 md:hidden">
+    <ul class="space-y-1 px-4 py-3">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="block rounded-md px-3 py-2 text-base font-medium text-neutral-700 hover:bg-brand-50 hover:text-brand-700"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("hidden") === false;
+    menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      iconOpen?.classList.remove("hidden");
+      iconClose?.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>

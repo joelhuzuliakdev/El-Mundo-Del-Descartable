@@ -1,0 +1,27 @@
+---
+const photos = [
+    { src: "/images/gallery/local-1.webp", alt: "Local de El Mundo Del Descartable" },
+    { src: "/images/gallery/local-2.webp", alt: "Estanterías con productos descartables" },
+    { src: "/images/gallery/local-3.webp", alt: "Mostrador de atención al cliente" },
+    { src: "/images/gallery/local-4.webp", alt: "Productos descartables disponibles" },
+];
+---
+
+<section class="section bg-neutral-50/60">
+    <h2 class="section-title">Conocé nuestro local</h2>
+    <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {
+        photos.map((p) => (
+            <img
+            src={p.src}
+            alt={p.alt}
+            width="300"
+            height="300"
+            loading="lazy"
+            decoding="async"
+            class="h-40 w-full rounded-lg object-cover sm:h-48"
+            />
+        ))
+        }
+    </div>
+</section>

@@ -1,0 +1,15 @@
+---
+import { products } from "../data/products";
+import ProductCard from "./ProductCard.astro";
+---
+
+<section class="section bg-neutral-50/60">
+  <h2 class="section-title">Productos destacados</h2>
+  <p class="section-subtitle">
+    Una selección de nuestros productos. El catálogo completo está disponible por WhatsApp.
+  </p>
+
+  <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {products.map((product) => <ProductCard product={product} />)}
+  </div>
+</section>

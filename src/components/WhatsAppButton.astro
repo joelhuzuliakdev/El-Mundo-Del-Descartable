@@ -1,0 +1,39 @@
+---
+import { IconBrandWhatsapp } from "@tabler/icons-astro";
+import { buildWhatsAppLink } from "../config/business";
+
+export interface Props {
+  message?: string;
+  variant?: "floating" | "inline";
+  label?: string;
+}
+
+const { message, variant = "inline", label = "Consultar por WhatsApp" } = Astro.props;
+const href = buildWhatsAppLink(message);
+---
+
+{
+  variant === "floating" ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-ga-event="click_whatsapp"
+      aria-label="Consultar por WhatsApp"
+      class="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-card hover:bg-[#1ebe57] focus-visible:outline-offset-4 md:bottom-8 md:right-8"
+    >
+      <IconBrandWhatsapp size={28} stroke={2} />
+    </a>
+  ) : (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-ga-event="click_whatsapp"
+      class="btn-primary"
+    >
+      <IconBrandWhatsapp size={20} stroke={2} />
+      {label}
+    </a>
+  )
+}

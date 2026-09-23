@@ -1,0 +1,44 @@
+---
+import WhatsAppButton from "./WhatsAppButton.astro";
+
+const rubros = [
+  "Gastronomía",
+  "Rotiserías",
+  "Restaurantes",
+  "Panaderías",
+  "Heladerías",
+  "Kioscos",
+  "Emprendimientos",
+  "Eventos",
+  "Comercios",
+];
+---
+
+<section class="section bg-brand-700 text-white">
+  <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+    <div>
+      <h2 class="text-2xl font-bold sm:text-3xl">Todo lo que tu negocio necesita</h2>
+      <p class="mt-4 max-w-xl text-brand-50">
+        Abastecemos a distintos rubros con productos descartables de calidad, en las cantidades
+        que tu negocio necesita.
+      </p>
+      <div class="mt-8">
+        <WhatsAppButton
+          variant="inline"
+          label="Consultar disponibilidad"
+          message="Hola, quería consultar disponibilidad de productos para mi negocio."
+        />
+      </div>
+    </div>
+
+    <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+      {
+        rubros.map((rubro) => (
+          <li class="rounded-lg bg-white/10 px-4 py-3 text-center text-sm font-medium">
+            {rubro}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

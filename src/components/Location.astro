@@ -1,0 +1,79 @@
+---
+import { IconMapPin, IconClock, IconPhone, IconRoute } from "@tabler/icons-astro";
+import { business } from "../config/business";
+---
+
+<section id="ubicacion" class="section bg-neutral-50/60">
+  <h2 class="section-title">Encontranos</h2>
+  <p class="section-subtitle">
+    Visitanos en {business.CITY}, {business.PROVINCE}, o consultanos por WhatsApp o teléfono.
+  </p>
+
+  <div class="mt-10 grid gap-8 lg:grid-cols-2">
+    <div class="space-y-6">
+      <div class="flex gap-4">
+        <IconMapPin class="mt-0.5 shrink-0 text-brand-700" size={24} />
+        <div>
+          <h3 class="font-semibold text-neutral-900">Dirección</h3>
+          <p class="text-neutral-600">
+            {business.ADDRESS}, {business.CITY}, {business.PROVINCE}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <IconClock class="mt-0.5 shrink-0 text-brand-700" size={24} />
+        <div>
+          <h3 class="font-semibold text-neutral-900">Horarios</h3>
+          <ul class="text-neutral-600">
+            {
+              business.OPENING_HOURS_DISPLAY.map((item) => (
+                <li>
+                  {item.days}: {item.hours}
+                </li>
+              ))
+            }
+          </ul>
+          <p class="mt-1 text-xs text-neutral-400">A confirmar / actualizar horarios reales.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <IconPhone class="mt-0.5 shrink-0 text-brand-700" size={24} />
+        <div>
+          <h3 class="font-semibold text-neutral-900">Teléfono</h3>
+          <a
+            href={`tel:+54${business.PHONE}`}
+            data-ga-event="click_phone"
+            class="text-neutral-600 hover:text-brand-700"
+          >
+            {business.PHONE_DISPLAY}
+          </a>
+        </div>
+      </div>
+
+      <a
+        href={business.GOOGLE_MAPS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-ga-event="click_maps"
+        class="btn-secondary"
+      >
+        <IconRoute size={20} />
+        Cómo llegar
+      </a>
+    </div>
+
+    <div class="overflow-hidden rounded-xl border border-neutral-200 shadow-soft">
+      <iframe
+        src={business.GOOGLE_MAPS_EMBED_SRC}
+        width="100%"
+        height="100%"
+        style="border:0; min-height: 320px;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title={`Mapa de ubicación de ${business.BUSINESS_NAME}`}
+      ></iframe>
+    </div>
+  </div>
+</section>

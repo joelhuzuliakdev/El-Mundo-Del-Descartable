@@ -1,0 +1,68 @@
+---
+import { IconChevronDown } from "@tabler/icons-astro";
+import { business } from "../config/business";
+
+const faqs = [
+  {
+    q: "¿Qué productos descartables venden?",
+    a: "Vasos, platos, cubiertos, bandejas, envases, bolsas, papel y servilletas, entre otros productos descartables.",
+  },
+  {
+    q: "¿Venden productos para comercios?",
+    a: "Sí, abastecemos a gastronomía, rotiserías, panaderías, heladerías, kioscos y otros comercios.",
+  },
+  {
+    q: "¿Venden productos para eventos?",
+    a: "Sí, tenemos productos ideales para cumpleaños, fiestas y todo tipo de eventos.",
+  },
+  {
+    q: "¿Cómo puedo consultar precios?",
+    a: "Podés escribirnos por WhatsApp y te respondemos con los precios actualizados.",
+  },
+  {
+    q: `¿Dónde están ubicados?`,
+    a: `Estamos en ${business.ADDRESS}, ${business.CITY}, ${business.PROVINCE}.`,
+  },
+  {
+    q: "¿Cuáles son los horarios de atención?",
+    a: "Podés ver nuestros horarios en la sección de ubicación de esta página, o consultarnos directamente por WhatsApp.",
+  },
+  {
+    q: "¿Cómo puedo hacer un pedido?",
+    a: "El medio más rápido es WhatsApp: contanos qué productos necesitás y te ayudamos con la consulta.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<section id="faq" class="section">
+  <h2 class="section-title">Preguntas frecuentes</h2>
+
+  <div class="mt-8 divide-y divide-neutral-200 border-t border-neutral-200">
+    {
+      faqs.map((faq) => (
+        <details class="group py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-neutral-900 marker:content-none">
+            {faq.q}
+            <IconChevronDown
+              size={18}
+              class="shrink-0 text-neutral-500 transition-transform duration-200 group-open:rotate-180"
+            />
+          </summary>
+          <p class="mt-2 text-sm text-neutral-600">{faq.a}</p>
+        </details>
+      ))
+    }
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</section>

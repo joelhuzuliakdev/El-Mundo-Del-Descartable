@@ -1,0 +1,38 @@
+---
+import { categories } from "../data/categories";
+import { iconMap, type IconName } from "./icons";
+import { buildWhatsAppLink } from "../config/business";
+---
+
+<section id="productos" class="section">
+  <h2 class="section-title">Encontrá todo lo que necesitás</h2>
+  <p class="section-subtitle">
+    Amplia variedad de descartables organizados por categoría, para comercios, eventos y hogares.
+  </p>
+
+  <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      categories.map((category) => {
+        const Icon = iconMap[category.icon as IconName];
+        return (
+          <div class="card flex flex-col">
+            <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+              <Icon size={24} stroke={1.8} />
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-neutral-900">{category.name}</h3>
+            <p class="mt-1 flex-1 text-sm text-neutral-600">{category.description}</p>
+            <a
+              href={buildWhatsAppLink(`Hola, quería consultar por ${category.name}.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-ga-event="click_category"
+              class="mt-4 inline-flex items-center text-sm font-semibold text-brand-700 hover:text-brand-800"
+            >
+              Consultar →
+            </a>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Categories from "../components/Categories.astro";
+import FeaturedProducts from "../components/FeaturedProducts.astro";
+import WhyUs from "../components/WhyUs.astro";
+import BusinessSection from "../components/BusinessSection.astro";
+import About from "../components/About.astro";
+import Gallery from "../components/Gallery.astro";
+import Location from "../components/Location.astro";
+import FAQ from "../components/FAQ.astro";
+import Contact from "../components/Contact.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="El Mundo Del Descartable | Productos descartables en Río Segundo, Córdoba"
+  description="Encontrá productos descartables para comercios, gastronomía, eventos y hogares. Conocé El Mundo Del Descartable y consultá por WhatsApp."
+>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <Categories />
+    <FeaturedProducts />
+    <WhyUs />
+    <Testimonials />
+    <BusinessSection />
+    <About />
+    <Gallery />
+    <Location />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+  <WhatsAppButton variant="floating" />
+</Layout>
