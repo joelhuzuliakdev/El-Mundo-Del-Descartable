@@ -13,11 +13,11 @@ export interface Product {
 // -----------------------------------------------------------------------------
 export const products: Product[] = [
   {
-    slug: "vasos-descartables-9oz",
-    name: "Vasos descartables 9 oz",
-    description: "Pack de vasos descartables para agua o gaseosa, ideales para eventos y comercios.",
+    slug: "vasos-descartables",
+    name: "Vasos descartables",
+    description: "Pack de vasos descartables para café, agua o gaseosa, ideales para eventos y comercios.",
     category: "vasos",
-    image: "/images/products/vasos-9oz.webp",
+    image: "/images/products/vasosDescartables.webp",
   },
   {
     slug: "platos-hondos-descartables",
