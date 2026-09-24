@@ -66,4 +66,16 @@ export const categories: Category[] = [
     description: "Más productos descartables para tu negocio, evento o casa.",
     icon: "IconDots",
   },
+  {
+    slug: "libreria",
+    name: "Librería",
+    description: "Lapiceras, fibrones, marcadores, cuadernos y afiches para tu escuela u oficina.",
+    icon: "IconPencil",
+  },
+  {
+    slug: "fotocopias",
+    name: "Fotocopias y anillado",
+    description: "Fotocopias, anillados y plastificados, listos en el momento.",
+    icon: "IconPrinter",
+  },
 ];

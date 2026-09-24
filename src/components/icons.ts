@@ -12,6 +12,8 @@ import {
   IconChefHat,
   IconConfetti,
   IconDots,
+  IconPencil,
+  IconPrinter,
 } from "@tabler/icons-astro";
 
 export const iconMap = {
@@ -25,6 +27,8 @@ export const iconMap = {
   IconChefHat,
   IconConfetti,
   IconDots,
+  IconPencil,
+  IconPrinter,
 } as const;
 
 export type IconName = keyof typeof iconMap;

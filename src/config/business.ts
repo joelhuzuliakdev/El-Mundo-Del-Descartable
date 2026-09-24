@@ -6,8 +6,7 @@
 export const business = {
   BUSINESS_NAME: "El Mundo Del Descartable",
   LEGAL_NAME: "El Mundo Del Descartable",
-  SHORT_DESCRIPTION:
-    "Productos descartables para comercios, gastronomía, eventos y hogares en Córdoba.",
+  SHORT_DESCRIPTION: "Productos descartables, librería y servicios de fotocopiado para comercios, gastronomía, eventos y hogares en Córdoba.",
 
   // Dirección (dato real provisto)
   ADDRESS: "Sobremonte 818",
