@@ -8,51 +8,50 @@ export interface Product {
 }
 
 // -----------------------------------------------------------------------------
-// Productos destacados de ejemplo. Reemplazar por el catálogo real del negocio.
-// No se inventaron precios: quedaron sin definir hasta confirmarlos.
+// Productos destacados. No se inventaron precios: quedan sin definir hasta confirmarlos.
 // -----------------------------------------------------------------------------
 export const products: Product[] = [
   {
-    slug: "vasos-descartables",
-    name: "Vasos descartables",
-    description: "Pack de vasos descartables para café, agua o gaseosa, ideales para eventos y comercios.",
-    category: "vasos",
+    slug: "bandeja-plastica-105-pp",
+    name: "Bandeja plástica 105 PP",
+    description: "Bandeja plástica para viandas, disponible también en otras medidas.",
+    category: "bandejas",
     image: "/images/products/bandejaPlastica.webp",
   },
   {
-    slug: "platos-hondos-descartables",
-    name: "Platos hondos descartables",
-    description: "Platos resistentes aptos para comidas calientes y frías.",
-    category: "platos",
+    slug: "bolsa-en-rollo",
+    name: "Bolsas en rollo",
+    description: "Bolsas en rollo para guardar mercadería, muy usadas en panaderías, carnicerías y kioscos.",
+    category: "bolsas",
     image: "/images/products/bolsaRollo.webp",
   },
   {
-    slug: "cubiertos-descartables-combo",
-    name: "Combo de cubiertos descartables",
-    description: "Set de cuchara, tenedor y cuchillo, ideal para delivery y eventos.",
+    slug: "caja-de-regalo",
+    name: "Caja de regalo",
+    description: "Caja para armar regalos, disponible en distintos tipos y tamaños.",
+    category: "otros",
+    image: "/images/products/cajaRegalo.webp",
+  },
+  {
+    slug: "rollo-de-aluminio",
+    name: "Rollo de aluminio",
+    description: "Rollo de aluminio para envolver y conservar alimentos.",
+    category: "papel-servilletas",
+    image: "/images/products/rolloAluminio.webp",
+  },
+  {
+    slug: "cucharas-plasticas",
+    name: "Cucharas plásticas",
+    description: "Cucharas plásticas ideales para postres, tortas y otros usos.",
     category: "cubiertos",
-    image: "/images/products/cajaEmpanada.webp",
+    image: "/images/products/cucharasPlasticas.webp",
   },
   {
-    slug: "bandejas-telgopor",
-    name: "Bandejas de telgopor",
-    description: "Bandejas para carnes, viandas y uso gastronómico en distintos tamaños.",
-    category: "bandejas",
-    image: "/images/products/potePlastico.webp",
-  },
-  {
-    slug: "envases-con-tapa",
-    name: "Envases con tapa",
-    description: "Envases herméticos para delivery y conservación de alimentos.",
-    category: "envases",
-    image: "/images/products/envases-con-tapa.webp",
-  },
-  {
-    slug: "bolsas-camiseta",
-    name: "Bolsas camiseta",
-    description: "Bolsas resistentes para comercios, disponibles en varios tamaños.",
+    slug: "bolsa-friselina",
+    name: "Bolsas de friselina",
+    description: "Bolsas de friselina resistentes, disponibles en varias medidas, usadas por tiendas de ropa y otros comercios.",
     category: "bolsas",
-    image: "/images/products/bolsas-camiseta.webp",
+    image: "/images/products/bolsaFriselina.webp",
   },
 ];
 
